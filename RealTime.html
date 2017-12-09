@@ -10,125 +10,17 @@
   <meta name="viewport" content="width=device-width">
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" type="text/css" href="styles.css">
   <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue-yellow.min.css" />
   <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  
 
 <style>
-* {
-    box-sizing: border-box;
-}
-.row::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-[class*="col-"] {
-    float: left;
-    padding: 15px;
-}
-html {
-    font-family: "Lucida Sans", sans-serif;
-}
-.header {
-    background-color: #FEF119;
-    color: black;
-    text-align: bottom;
-    padding: 15px;
-}
-.menu ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-.menu li {
-    padding: 8px;
-    margin-bottom: 7px;
-    background-color: #33b5e5;
-    color: #ffffff;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-}
-.menu li:hover {
-    background-color: #0099cc;
-}
-.aside {
-    background-color: #33b5e5;
-    padding: 15px;
-    color: #ffffff;
-    text-align: center;
-    font-size: 14px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-}
-.footer {
-    background-color: #0099cc;
-    color: #ffffff;
-    text-align: center;
-    font-size: 12px;
-    padding: 15px;
-}
-/* For mobile phones: */
-[class*="col-"] {
-    width: 100%;
-}
-@media only screen and (min-width: 600px) {
-    /* For tablets: */
-    .col-m-1 {width: 8.33%;}
-    .col-m-2 {width: 16.66%;}
-    .col-m-3 {width: 25%;}
-    .col-m-4 {width: 33.33%;}
-    .col-m-5 {width: 41.66%;}
-    .col-m-6 {width: 50%;}
-    .col-m-7 {width: 58.33%;}
-    .col-m-8 {width: 66.66%;}
-    .col-m-9 {width: 75%;}
-    .col-m-10 {width: 83.33%;}
-    .col-m-11 {width: 91.66%;}
-    .col-m-12 {width: 100%;}
-}
-@media only screen and (min-width: 768px) {
-    /* For desktop: */
-    .col-1 {width: 8.33%;}
-    .col-2 {width: 16.66%;}
-    .col-3 {width: 25%;}
-    .col-4 {width: 33.33%;}
-    .col-5 {width: 41.66%;}
-    .col-6 {width: 50%;}
-    .col-7 {width: 58.33%;}
-    .col-8 {width: 66.66%;}
-    .col-9 {width: 75%;}
-    .col-10 {width: 83.33%;}
-    .col-11 {width: 91.66%;}
-    .col-12 {width: 100%;}
-}
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 50%;
-    margin: auto;
-    border: 2px solid white;
-    text-align: center;
-}
-
-td, th {
-    border: 1px solid white;
-    text-align: left;
-    padding: 8px;
-}
-
-tr:nth-child(even) {
-    background-color: #f8f8ff;
-}
-tr:nth-child(odd) {
-    background-color: #f8f8fa;
-}
-tr:first-child {
-    text-align: center;
-    font-size: 20px;
-    background-color: #00B7E8;
-    color: #FFFFFF;
-}
 
 </style>
+
 </head>
+
 <body>
 
 <div class="header">
@@ -161,114 +53,6 @@ tr:first-child {
   </br>
 
 </div>
-<!--<div id="chart">
-
-</div>-->
-
-  <script>
-
-  function Refresh(){
-    $("table").children().remove();
-    var stopnumber = document.getElementById("stopNum").value;
-    busData(stopnumber);
-  }
-
-  function busData(stopid){
-    var createURL = "https://data.dublinked.ie/cgi-bin/rtpi/realtimebusinformation?stopid=" + stopid + "&format=json";
-    console.log(createURL);
-    $.ajax({
-      type: 'GET',
-      url: createURL,
-      dataType: "JSON", // data type expected from server
-      success: function (data) {
-
-        var busjson = data;
-        console.log(busjson);
-        var numberofbuses = busjson.numberofresults;
-        var buses = busjson.results;
-
-        var i =0;
-        for(i;i<numberofbuses;i++){
-          var bus = buses[i].route;
-          var dueTime = buses[i].duetime;
-          console.log(bus)
-        }
-              // get the reference for the body
-        var body = document.getElementById('chart');
-       
-        // creates a <table> element and a <tbody> element
-        var tbl = document.createElement("table");
-        var tblBody = document.createElement("tbody");
-        var row = document.createElement("tr");
-
-        for (var q = 0; q < 2; q++) {
-            // Create a <td> element and a text node, make the text
-            // node the contents of the <td>, and put the <td> at
-            // the end of the table row
-            if(q == 0){
-
-              var cell = document.createElement("td");
-              var cellText = document.createTextNode("Route");
-
-            }
-
-            else if(q == 1){
-              var cell = document.createElement("td");
-              var cellText = document.createTextNode("Due In");
-            }
-            cell.appendChild(cellText);
-            row.appendChild(cell);
-          }
-          tblBody.appendChild(row);
-          tbl.appendChild(tblBody);
-          body.appendChild(tbl);
-        // creating all cells
-        for (var i = 0; i < numberofbuses; i++) {
-          // creates a table row
-           var row = document.createElement("tr");
-  
-          for (var j = 0; j < 2; j++) {
-            // Create a <td> element and a text node, make the text
-            // node the contents of the <td>, and put the <td> at
-            // the end of the table row
-            if(j == 0){
-
-              var cell = document.createElement("td");
-              var cellText = document.createTextNode(buses[i].route);
-
-            }
-
-            else if(j == 1){
-              var cell = document.createElement("td");
-              var cellText = document.createTextNode(buses[i].duetime + " mins");
-            }
-            cell.appendChild(cellText);
-            row.appendChild(cell);
-          }
-       
-          // add the row to the end of the table body
-          tblBody.appendChild(row);
-        }
-       
-        // put the <tbody> in the <table>
-        tbl.appendChild(tblBody);
-        // appends <table> into <body>
-        body.appendChild(tbl);
-        // sets the border attribute of tbl to 2;
-        //tbl.setAttribute("border", "2");
-        //tbl.setAttribute("style", "text-align: center");
-
-        
-
-      },
-      error: function() {
-          console.log('Error: ' + data);
-          //document.getElementById('')
-      }
-    });
-  }
-  </script>
-
 
 <div class="col-3 col-m-12">
   <div class="aside">
@@ -289,4 +73,5 @@ tr:first-child {
 </div>
 
 </body>
+<script src="bus.js"></script>
 </html>
