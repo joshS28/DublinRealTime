@@ -1,8 +1,4 @@
 
-$(document).ready(function(){
-    alert("We accessed the Javascript");
-})
-
   function Refresh(){
     $("table").children().remove();
     var stopnumber = document.getElementById("stopNum").value;
