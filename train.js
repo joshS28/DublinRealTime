@@ -32,8 +32,6 @@ var xhttp = new XMLHttpRequest();
         name: actualName,
         code: nameSt,
       });
-      console.log(stationCodes[x].name + " " + stationCodes[x].code);
-      //console.log(nameSt);   FOR TESTING PURPOSES
 
     }
 
@@ -44,7 +42,7 @@ var xhttp = new XMLHttpRequest();
     for(var r = 0; r < stationCodes.length; r++){
 
       var opt = document.createElement('option');
-      console.log("Created element");
+      //console.log("Created element");
       opt.innerHTML = stationCodes[r].name;
       opt.value = stationCodes[r].code;
       selectID.appendChild(opt);
@@ -68,13 +66,13 @@ function showTrains() {
 
 
 var stationChosen = "";
-console.log(stationChosen);
+//console.log(stationChosen);
 function changeSelect(){
 
   var stChoice = document.getElementById("stationsList");
 
     stationChosen = stChoice.options[stChoice.selectedIndex].value;
-    console.log(stationChosen);
+    //console.log(stationChosen);
     //var stationChosen = stChoice.options[stChoice.selectedIndex].text;
     //console.log(stationChosen);
     getST();
@@ -124,7 +122,7 @@ function myFunction(xml) {
         name: actualName,
         code: nameSt,
       });
-      console.log(stationCodes[x].name + " " + stationCodes[x].code);
+      //console.log(stationCodes[x].name + " " + stationCodes[x].code);
       //console.log(nameSt);   FOR TESTING PURPOSES
 
     }
@@ -136,7 +134,7 @@ function myFunction(xml) {
     for(var r = 0; r < stationCodes.length; r++){
 
       var opt = document.createElement('option');
-      console.log("Created element");
+      //console.log("Created element");
       opt.innerHTML = stationCodes[r].name;
       opt.value = stationCodes[r].code;
       selectID.appendChild(opt);
@@ -178,7 +176,7 @@ function getStationInfo(statCode){
     var sib = ArrayOfObjStation.firstChild;
       //console.log(sib);
       var train = sib.nextSibling;
-      console.log(train);
+      //console.log(train);
       var nextTrain = train.nextElementSibling;
       //console.log(nextTrain);
 
@@ -196,7 +194,7 @@ function getStationInfo(statCode){
         var originTrain = origins[i].firstChild.nodeValue;
         var dueTrain = myDueins[i].firstChild.nodeValue;
         var dirTrain = direction[i].firstChild.nodeValue;
-        console.log(dirTrain);
+        //console.log(dirTrain);
         //xmlSt.documentElement.getElementsByTagName("Lastlocation")[0]..childNodes.length == 0
         if(xmlSt.documentElement.getElementsByTagName("Lastlocation")[i].childNodes.length == 0){
           //alert("No Location for " + dueTrain);
@@ -216,7 +214,7 @@ function getStationInfo(statCode){
 
         });
 
-        console.log(TRNS[i].due + " " + TRNS[i].orig + " -> " + TRNS[i].dest + " " + TRNS[i].loc + " " + TRNS[i].dir);
+        //console.log(TRNS[i].due + " " + TRNS[i].orig + " -> " + TRNS[i].dest + " " + TRNS[i].loc + " " + TRNS[i].dir);
 
         
 
@@ -226,7 +224,7 @@ function getStationInfo(statCode){
 
       }
 
-      console.log(" SEPARATE ");
+      //console.log(" SEPARATE ");
 
       TRNS.sort(function(a, b) {
           return parseFloat(a.due) - parseFloat(b.due);
@@ -234,7 +232,7 @@ function getStationInfo(statCode){
 
       for(var w = 0; w < myDestinations.length; w++){
 
-      console.log(TRNS[w].due + " " + TRNS[w].orig + " -> " + TRNS[w].dest + " " + TRNS[w].loc + " " + TRNS[w].dir);
+      //console.log(TRNS[w].due + " " + TRNS[w].orig + " -> " + TRNS[w].dest + " " + TRNS[w].loc + " " + TRNS[w].dir);
 
     }
 
@@ -332,5 +330,8 @@ function getStationInfo(statCode){
         tbl.appendChild(tblBody);
         // appends <table> into <body>
         body.appendChild(tbl);
-  }
 
+        $('body').css('width', '500px');
+
+
+  }

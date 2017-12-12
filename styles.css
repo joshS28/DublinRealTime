@@ -1,6 +1,9 @@
 * {
     box-sizing: border-box;
 }
+html {
+    width: max-width;
+}
 .row::after {
     content: "";
     clear: both;
@@ -13,12 +16,26 @@
 html {
     font-family: "Lucida Sans", sans-serif;
 }
+body{
+    display: inline-block;
+    max-width: 1000px;
+}
 .header {
     background-color: #FEF119;
     color: black;
     text-align: bottom;
     padding: 15px;
     width: max-width;
+    position: relative;
+
+}
+.header2 {
+    background-color: #FEF119;
+    color: black;
+    text-align: bottom;
+    padding: 15px;
+    width: max-width;
+    position: relative;
 }
 .menu ul {
     list-style-type: none;
@@ -87,7 +104,7 @@ html {
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
-    width: 50%;
+    width: 40%;
     margin: auto;
     border: 2px solid white;
     text-align: center;

@@ -23,49 +23,49 @@
 
 <body>
 
-<div class="header">
+<div class="header" id="headerID" style="color: black; background-color: #FEF119">
   <h2>Dublin Transport Real Time</h2>
 </div>
 
 <div class="row">
 
-<div class="col-3 col-m-3 menu">
-  <ul>
-    <li onclick="showBus()">Dublin Bus  <i class="material-icons">directions_bus</i></li>
-    <li onclick="showTrains()">DART  <i class="material-icons">train</i></li>
-    <li>LUAS  <i class="material-icons">tram</i></li>
-    <li>Dublin Bikes  <i class="material-icons">directions_bike</i></li>
-  </ul>
-</div>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js">
-                                                                           </script>
-
-<div class="col-6 col-m-9">
-  <div id="chart" style="display: none;">
- 
-    <form action="#">
-      <div class="mdl-textfield mdl-js-textfield">
-        <input class="mdl-textfield__input" type="text" id="stopNum">
-        <label class="mdl-textfield__label" for="sample1"> Bus Stop Number</label>
-      </div>
-      <button id="getBusData" style="align-content: center; align-items: center; padding-bottom: 15px;" type="button" class="mdl-button mdl-js-button mdl-button--colored mdl-button--raised mdl-js-ripple-effect" onclick="Refresh()"> Refresh </button>
-    </form>
-  </div>
-  </div>
-  <div id="TrainTable" style="display: none;">
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <label class="mdl-textfield__label">Station Select</label>
-        <select class="mdl-textfield__input" id="stationsList" onchange="changeSelect()">
-        <option value="Selection">--- Choose Station ---</option>
-        </select>
+    <div class="col-3 col-m-3 menu">
+      <ul>
+        <li onclick="showBus()">Dublin Bus  <i class="material-icons">directions_bus</i></li>
+        <li onclick="showTrains()">DART  <i class="material-icons">train</i></li>
+        <li onclick="TestFunction()">LUAS  <i class="material-icons">tram</i></li>
+        <li>Dublin Bikes  <i class="material-icons">directions_bike</i></li>
+      </ul>
     </div>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js">
+                                                                               </script>
 
-<button id="getBusData" style="align-content: center; align-items: center; padding-bottom: 15px;" type="button" class="mdl-button mdl-js-button mdl-button--colored mdl-button--raised mdl-js-ripple-effect" onclick="changeSelect()"> Refresh </button>
+    <div class="col-6 col-m-6">
+      <div id="chart" style="display: none;">
+     
+        <form action="#">
+          <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" type="text" id="stopNum">
+            <label class="mdl-textfield__label" for="sample1"> Bus Stop Number</label>
+          </div>
+          <button id="getBusData" style="align-content: center; align-items: center; padding-bottom: 15px;" type="button" class="mdl-button mdl-js-button mdl-button--colored mdl-button--raised mdl-js-ripple-effect" onclick="Refresh()"> Refresh </button>
+        </form>
+      </div>
+      </div>
+      <div id="TrainTable" style="display: none;">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <label class="mdl-textfield__label">Station Select</label>
+            <select class="mdl-textfield__input" id="stationsList" onchange="changeSelect()">
+            <option value="Selection">--- Choose Station ---</option>
+            </select>
+        </div>
 
 
-</div>
+      <button id="getBusData" style="align-content: center; align-items: center; padding-bottom: 15px;" type="button" class="mdl-button mdl-js-button mdl-button--colored mdl-button--raised mdl-js-ripple-effect" onclick="changeSelect()"> Refresh </button>
+
+
+    </div>
 
 </div>
 
