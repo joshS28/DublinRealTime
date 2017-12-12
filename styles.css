@@ -18,6 +18,7 @@ html {
     color: black;
     text-align: bottom;
     padding: 15px;
+    width: max-width;
 }
 .menu ul {
     list-style-type: none;

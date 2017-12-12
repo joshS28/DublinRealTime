@@ -31,8 +31,8 @@
 
 <div class="col-3 col-m-3 menu">
   <ul>
-    <li>Dublin Bus  <i class="material-icons">directions_bus</i></li>
-    <li>DART  <i class="material-icons">train</i></li>
+    <li onclick="showBus()">Dublin Bus  <i class="material-icons">directions_bus</i></li>
+    <li onclick="showTrains()">DART  <i class="material-icons">train</i></li>
     <li>LUAS  <i class="material-icons">tram</i></li>
     <li>Dublin Bikes  <i class="material-icons">directions_bike</i></li>
   </ul>
@@ -41,16 +41,31 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js">
                                                                            </script>
 
-<div class="col-6 col-m-9" id="chart">
+<div class="col-6 col-m-9">
+  <div id="chart" style="display: none;">
  
-  <form action="#">
-    <div class="mdl-textfield mdl-js-textfield">
-      <input class="mdl-textfield__input" type="text" id="stopNum">
-      <label class="mdl-textfield__label" for="sample1"> Bus Stop Number</label>
+    <form action="#">
+      <div class="mdl-textfield mdl-js-textfield">
+        <input class="mdl-textfield__input" type="text" id="stopNum">
+        <label class="mdl-textfield__label" for="sample1"> Bus Stop Number</label>
+      </div>
+      <button id="getBusData" style="align-content: center; align-items: center; padding-bottom: 15px;" type="button" class="mdl-button mdl-js-button mdl-button--colored mdl-button--raised mdl-js-ripple-effect" onclick="Refresh()"> Refresh </button>
+    </form>
+  </div>
+  </div>
+  <div id="TrainTable" style="display: none;">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <label class="mdl-textfield__label">Browser Select</label>
+        <select class="mdl-textfield__input" id="stationsList" onchange="changeSelect()">
+        <option value="Selection">--- Choose Station ---</option>
+        </select>
     </div>
-    <button id="getBusData" style="align-content: center; align-items: center; padding-bottom: 15px;" type="button" class="mdl-button mdl-js-button mdl-button--colored mdl-button--raised mdl-js-ripple-effect" onclick="Refresh()"> Refresh </button>
-  </form>
-  </br>
+
+
+<button id="getBusData" style="align-content: center; align-items: center; padding-bottom: 15px;" type="button" class="mdl-button mdl-js-button mdl-button--colored mdl-button--raised mdl-js-ripple-effect" onclick="changeSelect()"> Refresh </button>
+
+
+</div>
 
 </div>
 
@@ -70,8 +85,10 @@
 
 <div class="footer">
   <p>Currently adding functionality to select by route as well as LUAS, DART and Dublin Bikes Real Time </p>
+  <div align=center><a href='https://www.counter12.com'><img src='https://www.counter12.com/img-yWd0Bx4d97Z1WDw4-8.gif' border='0' alt='free counter'></a><script type='text/javascript' src='https://www.counter12.com/ad.js?id=yWd0Bx4d97Z1WDw4'></script></div>
 </div>
 
 </body>
 <script src="bus.js"></script>
+<script src="train.js"></script>
 </html>
