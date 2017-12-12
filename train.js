@@ -53,7 +53,7 @@ var xhttp = new XMLHttpRequest();
 
      }
   };
-  xhttp.open("GET", "https://api.irishrail.ie/realtime/realtime.asmx/getAllStationsXML", true);
+  xhttp.open("GET", "https://cors-anywhere.herokuapp.com/https://api.irishrail.ie/realtime/realtime.asmx/getAllStationsXML", true);
   xhttp.send();
 
 
@@ -89,7 +89,7 @@ function getST(){
       myFunction(this);
      }
   };
-  xhttp.open("GET", "https://api.irishrail.ie/realtime/realtime.asmx/getAllStationsXML", true);
+  xhttp.open("GET", "https://cors-anywhere.herokuapp.com/https://api.irishrail.ie/realtime/realtime.asmx/getAllStationsXML", true);
   xhttp.send();
 }
 
@@ -151,7 +151,7 @@ function myFunction(xml) {
 function getStationInfo(statCode){
 
   var stCode = statCode;
-  var createURLTrain = "https://api.irishrail.ie/realtime/realtime.asmx/getStationDataByCodeXML?StationCode=" + stCode;
+  var createURLTrain = "https://cors-anywhere.herokuapp.com/https://api.irishrail.ie/realtime/realtime.asmx/getStationDataByCodeXML?StationCode=" + stCode;
   
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
