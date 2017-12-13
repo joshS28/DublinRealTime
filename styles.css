@@ -4,47 +4,81 @@
 html {
     width: max-width;
 }
+.square {
+    float:left;
+    position: relative;
+    width: 45%;
+    padding-bottom : 45%; /* = width for a 1:1 aspect ratio */
+    margin:1.66%;
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-size:cover; /* you change this to "contain" if you don't want the images to be cropped */
+}
+/*.img_1-1{background-image:url('bus.png');
+border-radius: 25px;
+    border: 2px solid black;}
+.img_1-1:hover{
+        opacity: 0.5;
+}
+.img_1-2{background-image:url('dart.jpg');
+border-radius: 25px;
+    border: 2px solid black;}
+.img_2-1{background-image:url('luas.png');
+border-radius: 25px;
+    border: 2px solid black;}
+.img_2-2{background-image:url('bike.png');
+border-radius: 25px;
+    border: 2px solid black;}*/
 .row::after {
     content: "";
     clear: both;
     display: table;
 }
 [class*="col-"] {
-    float: left;
+    float: center;
     padding: 15px;
 }
 html {
     font-family: "Lucida Sans", sans-serif;
 }
+
+img {
+    max-width: 100%;
+    height: auto;
+    opacity: 0.5;
+}
 body{
+    background-color: #FFFFFF;
+background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
     display: inline-block;
     max-width: 1000px;
 }
 .header {
-    background-color: #FEF119;
     color: black;
     text-align: bottom;
     padding: 15px;
     width: max-width;
     position: relative;
+}
+.chart{
+   margin: auto;
+}
+.TrainTable{
+    margin: auto;
+}
 
-}
-.header2 {
-    background-color: #FEF119;
-    color: black;
-    text-align: bottom;
-    padding: 15px;
-    width: max-width;
-    position: relative;
-}
 .menu ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 .menu li {
     padding: 8px;
     margin-bottom: 7px;
+    border-radius: 10px;
+    border: 2px solid #33b5e5;
     background-color: #33b5e5;
     color: #ffffff;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
@@ -104,7 +138,7 @@ body{
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
-    width: 40%;
+    width: 100%;
     margin: auto;
     border: 2px solid white;
     text-align: center;
@@ -127,4 +161,13 @@ tr:first-child {
     font-size: 20px;
     background-color: #00B7E8;
     color: #FFFFFF;
+}
+p{
+    margin: 0px;
+}
+.logo-text {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
