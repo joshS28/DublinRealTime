@@ -173,9 +173,23 @@ function getStationInfo(statCode){
 
     var ArrayOfObjStation = xmlSt.documentElement;
     //console.log(ArrayOfObjStation);
+    if(ArrayOfObjStation.firstChild == null || ArrayOfObjStation.firstChild == undefined){
+      //alert("There are currenty no trains in the next 90 minutes for this stop");
+        //$("#TrainTable").append($("#template").html());
+        var x = document.getElementById("templateWarning");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+      }
     var sib = ArrayOfObjStation.firstChild;
       //console.log(sib);
+      if(sib.nextSibling == null || sib.nextSibling == undefined){
+        alert("There are currenty no trains running for this stop");
+      }
       var train = sib.nextSibling;
+
       //console.log(train);
       var nextTrain = train.nextElementSibling;
       //console.log(nextTrain);

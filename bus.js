@@ -28,6 +28,14 @@
         console.log(busjson);
         var numberofbuses = busjson.numberofresults;
         var buses = busjson.results;
+        if(numberofbuses == 0){
+          var x = document.getElementById("templateWarningBus");
+          if (x.style.display === "none") {
+            x.style.display = "block";
+          } else {
+            x.style.display = "none";
+          }
+        }
 
         var i =0;
         for(i;i<numberofbuses;i++){

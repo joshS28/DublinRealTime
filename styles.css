@@ -36,7 +36,7 @@ border-radius: 25px;
 }
 [class*="col-"] {
     float: center;
-    padding: 15px;
+    padding: 5px;
 }
 html {
     font-family: "Lucida Sans", sans-serif;
@@ -76,7 +76,7 @@ background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
 }
 .menu li {
     padding: 8px;
-    margin-bottom: 7px;
+    margin-bottom: 5px;
     border-radius: 10px;
     border: 2px solid #33b5e5;
     background-color: #33b5e5;
