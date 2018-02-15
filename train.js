@@ -345,7 +345,7 @@ function getStationInfo(statCode){
         // appends <table> into <body>
         body.appendChild(tbl);
 
-        $('body').css('width', '500px');
+        $('body').css('width', '100%');
 
 
   }

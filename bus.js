@@ -1,4 +1,10 @@
 
+  function NAfunc(){
+    alert("Luas RealTime is currently in development! Come back soon!");
+  }
+    function NAfunc2(){
+    alert("Dublin Bikes RealTime is currently in development! Come back soon!");
+  }
 
   function Refresh(){
     $("table").children().remove();

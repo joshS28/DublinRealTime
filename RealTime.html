@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue-yellow.min.css" />
   <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <!--<link rel="stylesheet" media="screen and (min-device-width: 800px)" href="big.css" />-->
 
 <style>
 
@@ -44,12 +45,12 @@
 -->
 <div class="row">
 
-    <div class="col-3 col-m-3 menu">
+    <div class="col-12 col-m-12 menu">
       <ul>
         <li onclick="showBus()">Dublin Bus  <i class="material-icons md-48">directions_bus</i></li>
         <li onclick="showTrains()">DART  <i class="material-icons">train</i></li>
-        <li onclick="TestFunction()">LUAS  <i class="material-icons">tram</i></li>
-        <li>Dublin Bikes  <i class="material-icons">directions_bike</i></li>
+        <li onclick="NAfunc()">LUAS  <i class="material-icons">tram</i></li>
+        <li onclick="NAfunc2()">Dublin Bikes  <i class="material-icons">directions_bike</i></li>
       </ul>
     </div>
 
@@ -62,13 +63,13 @@
         <p>There are no buses at your stop within the next 90 minutes.</p>
       </div>
     <!--<div class="col-6 col-m-6">-->
-      <div class="col-6 col-m-6" id="chart" style="display: none;">
+      <div class="col-12 col-m-12" id="chart" style="display: none;">
         <form action="#">
           <div class="mdl-textfield mdl-js-textfield">
             <input class="mdl-textfield__input" type="text" id="stopNum">
             <label class="mdl-textfield__label" for="sample1"> Bus Stop Number</label>
           </div>
-          <button id="getBusData" style="align-content: center; align-items: center; padding-bottom: 15px;" type="button" class="mdl-button mdl-js-button mdl-button--colored mdl-button--raised mdl-js-ripple-effect" onclick="Refresh()"> Refresh </button>
+          <button id="getBusData" style="align-content: center; align-items: center; padding-bottom: 15px;" type="button" class="mdl-button mdl-js-button mdl-button--colored mdl-button--raised mdl-js-ripple-effect" onclick="Refresh()"> Search </button>
         </form>
       </div>
       <!--</div>-->
@@ -78,7 +79,7 @@
         <h3>Unlucky!</h3>
         <p>There are no trains at your station within the next 90 minutes.</p>
       </div>
-      <div class="col-6 col-m-6" id="TrainTable" style="display: none;">
+      <div class="col-12 col-m-12" id="TrainTable" style="display: none;">
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <label class="mdl-textfield__label">Station Select</label>
             <select class="mdl-textfield__input" id="stationsList" onchange="changeSelect()">
@@ -89,7 +90,7 @@
     </div>
 </div>
 
-<div class="col-3 col-m-12">
+<div class="col-12 col-m-12">
   <div class="aside">
     <h2>What?</h2>
     <p>A Realtime Dublin Transport Web application</p>
@@ -103,8 +104,8 @@
 
 </div>
 
-<div class="footer">
-  <p>Currently adding functionality to select by route as well as LUAS, DART and Dublin Bikes Real Time </p>
+<div class="footer" style="margin-top: 20px;">
+  <p>Currently adding functionality to select by route as well as LUAS and Dublin Bikes Real Time data </p>
 
 
 </body>
