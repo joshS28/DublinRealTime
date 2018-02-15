@@ -16,7 +16,7 @@
 }
 
   function busData(stopid){
-    var createURL = "https://data.dublinked.ie/cgi-bin/rtpi/realtimebusinformation?stopid=" + stopid + "&format=json";
+    var createURL = "https://cors-anywhere.herokuapp.com/https://data.dublinked.ie/cgi-bin/rtpi/realtimebusinformation?stopid=" + stopid + "&format=json";
     console.log(createURL);
     $.ajax({
       type: 'GET',
